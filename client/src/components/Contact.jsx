@@ -1,32 +1,23 @@
 import { useState } from 'react';
-import { FiMail, FiGithub, FiSend, FiCheck, FiAlertCircle } from 'react-icons/fi';
-import emailjs from '@emailjs/browser';
+import { FiMail, FiGithub, FiSend, FiCheck } from 'react-icons/fi';
 import { useInView } from '../hooks/useInView';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [status, setStatus] = useState('idle');
   const [ref, isInView] = useInView(0.1);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('loading');
-    try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        { from_name: form.name, from_email: form.email, message: form.message },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-      setStatus('success');
-      setForm({ name: '', email: '', message: '' });
-    } catch {
-      setStatus('error');
-    }
+    const subject = encodeURIComponent(`Message from ${form.name}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+    window.location.href = `mailto:lamakhusee@gmail.com?subject=${subject}&body=${body}`;
+    setStatus('success');
+    setForm({ name: '', email: '', message: '' });
   };
 
   return (
@@ -190,27 +181,12 @@ export default function Contact() {
                   />
                 </div>
 
-                {status === 'error' && (
-                  <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm">
-                    <FiAlertCircle size={16} />
-                    Something went wrong. Please try emailing me directly.
-                  </div>
-                )}
-
                 <button
                   type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-indigo-200"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
                 >
-                  {status === 'loading' ? (
-                    <>
-                      <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <FiSend size={16} />
-                      Send Message
+                  <FiSend size={16} />
+                  Send Message
                     </>
                   )}
                 </button>
