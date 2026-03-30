@@ -187,8 +187,6 @@ export default function Contact() {
                 >
                   <FiSend size={16} />
                   Send Message
-                    </>
-                  )}
                 </button>
               </form>
             )}
