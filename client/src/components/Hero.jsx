@@ -109,7 +109,7 @@ export default function Hero({ onDownloadCV }) {
                   </div>
                   <div>
                     <p className="text-xs text-slate-400">Currently at</p>
-                    <p className="text-xs font-bold text-slate-800">Gamenic Virtual Pvt Ltd</p>
+                    <p className="text-xs font-bold text-slate-800">Gamenic Virtual Studio Pvt. Ltd</p>
                   </div>
                 </div>
               </div>

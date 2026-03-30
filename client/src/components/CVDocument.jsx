@@ -187,7 +187,7 @@ const CVDocument = forwardRef(function CVDocument(_props, ref) {
                 <span style={s.entryTitle}>Frontend Developer</span>
                 <span style={s.entryPeriod}>2024 — Present</span>
               </div>
-              <p style={s.entryCompany}>Gamenic Virtual Pvt Ltd</p>
+              <p style={s.entryCompany}>Gamenic Virtual Studio Pvt. Ltd</p>
               <div style={s.bullet}><span style={s.dot}/><span>Building responsive UIs with React and Tailwind CSS.</span></div>
               <div style={s.bullet}><span style={s.dot}/><span>Translating Figma designs into pixel-perfect components.</span></div>
               <div style={s.bullet}><span style={s.dot}/><span>Collaborating with design and backend teams.</span></div>
@@ -198,7 +198,7 @@ const CVDocument = forwardRef(function CVDocument(_props, ref) {
                 <span style={s.entryTitle}>Accountant</span>
                 <span style={s.entryPeriod}>2023 — 2024</span>
               </div>
-              <p style={s.entryCompany}>Papercloud</p>
+              <p style={s.entryCompany}>Paper Cloud Pvt. Ltd</p>
               <div style={s.bullet}><span style={s.dot}/><span>Managed financial records and monthly reconciliations.</span></div>
               <div style={s.bullet}><span style={s.dot}/><span>Maintained structured digital tracking and reporting.</span></div>
             </div>

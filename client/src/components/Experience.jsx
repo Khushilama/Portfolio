@@ -4,7 +4,7 @@ import { useInView } from '../hooks/useInView';
 const experiences = [
   {
     role: 'Frontend Developer',
-    company: 'Gamenic Virtual Pvt Ltd',
+    company: 'Gamenic Virtual Studio Pvt. Ltd',
     period: '2024 — Present',
     type: 'Full-time',
     location: 'On-site',
@@ -17,7 +17,7 @@ const experiences = [
   },
   {
     role: 'Accountant',
-    company: 'Papercloud',
+    company: 'Paper Cloud Pvt. Ltd',
     period: '2023 — 2024',
     type: 'Full-time',
     location: 'On-site',
