@@ -8,6 +8,7 @@ export async function downloadCV(ref) {
   const canvas = await html2canvas(element, {
     scale: 2,
     useCORS: true,
+    allowTaint: true,
     backgroundColor: '#ffffff',
     logging: false,
   });

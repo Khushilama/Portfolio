@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import profileImg from '../image/shared image.jpg';
 
 const s = {
   page: {
@@ -135,13 +136,31 @@ const CVDocument = forwardRef(function CVDocument(_props, ref) {
   return (
     <div ref={ref} style={s.page}>
       {/* Header */}
-      <div style={s.header}>
-        <h1 style={s.name}>Khushi Lama</h1>
-        <p style={s.title}>Frontend Designer &amp; Developer</p>
-        <div style={s.contactRow}>
-          <span style={s.contactItem}>📧 lamakhusee@gmail.com</span>
-          <span style={s.contactItem}>💻 github.com/Khushilama</span>
-          <span style={s.contactItem}>🌐 Portfolio Website</span>
+      <div style={{ ...s.header, display: 'flex', alignItems: 'center', gap: '24px' }}>
+        {/* Profile photo */}
+        <img
+          src={profileImg}
+          alt="Khushi Lama"
+          style={{
+            width: '100px',
+            height: '100px',
+            borderRadius: '50%',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            border: '3px solid #4f46e5',
+            flexShrink: 0,
+          }}
+          crossOrigin="anonymous"
+        />
+        {/* Name & contact */}
+        <div>
+          <h1 style={s.name}>Khushi Lama</h1>
+          <p style={s.title}>Frontend Designer &amp; Developer</p>
+          <div style={s.contactRow}>
+            <span style={s.contactItem}>📧 lamakhusee@gmail.com</span>
+            <span style={s.contactItem}>💻 github.com/Khushilama</span>
+            <span style={s.contactItem}>🌐 Portfolio Website</span>
+          </div>
         </div>
       </div>
 
